@@ -1,0 +1,18 @@
+{
+    "productId": "prd_Fresca",
+    "contractId": "ctr_1-1NC95D",
+    "groupIds": [
+        229585
+    ],
+    "environments": [
+        "dev",
+        "qa",
+        "prod"
+    ],
+    "version": "0.7.8-RELEASE",
+    "isSecure": true,
+    "edgeGridConfig": {
+        "section": "papi"
+    },
+    "name": "vvelazqu.devops.training"
+}

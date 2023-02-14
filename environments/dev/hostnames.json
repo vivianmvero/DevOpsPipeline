@@ -1,0 +1,8 @@
+[
+    {
+        "cnameFrom": "dev.vvelazqu.devops.training",
+        "cnameTo": "dev.vvelazqu.devops.training.edgekey.net",
+        "cnameType": "EDGE_HOSTNAME",
+        "edgeHostnameId": null
+    }
+]

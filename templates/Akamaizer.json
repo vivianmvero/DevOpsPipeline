@@ -1,0 +1,30 @@
+{
+    "name": "Akamaizer",
+    "children": [],
+    "behaviors": [
+        {
+            "name": "advanced",
+            "options": {
+                "description": "Akamaizer",
+                "xml": "<edgecomputing:processor> <value>akamaizer</value> <allow-akamaizer>on</allow-akamaizer> <status>on</status> </edgecomputing:processor> <edgecomputing:akamaizer> <tag-filter> <rule>#Request Information#Akamai Details - Headers Received:#</rule> <tags>h1</tags> <onmatch>stop</onmatch> <scope>block</scope> <type>include</type> </tag-filter> <tag-filter> <rule>#Field#Information / Field#</rule> <tags>th</tags> <onmatch>stop</onmatch> <scope>block</scope> <type>include</type> </tag-filter> <tag-filter> <rule>#Value#Information / Value#</rule> <tags>th</tags> <onmatch>stop</onmatch> <scope>block</scope> <type>include</type> </tag-filter> </edgecomputing:akamaizer>"
+            },
+            "uuid": "4ff7af67-89c7-493e-89a6-46289c1531ff"
+        }
+    ],
+    "uuid": "2026e141-b003-4225-a22a-f75fc324017b",
+    "criteria": [
+        {
+            "name": "path",
+            "options": {
+                "matchCaseSensitive": false,
+                "matchOperator": "MATCHES_ONE_OF",
+                "values": [
+                    "/akamaizer/"
+                ],
+                "normalize": false
+            }
+        }
+    ],
+    "criteriaMustSatisfy": "all",
+    "comments": ""
+}

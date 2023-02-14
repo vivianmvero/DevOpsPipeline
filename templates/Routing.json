@@ -1,0 +1,196 @@
+{
+    "name": "Routing",
+    "children": [
+        {
+            "name": "/origin1/",
+            "children": [],
+            "behaviors": [
+                {
+                    "name": "origin",
+                    "options": {
+                        "originType": "CUSTOMER",
+                        "forwardHostHeader": "REQUEST_HOST_HEADER",
+                        "cacheKeyHostname": "REQUEST_HOST_HEADER",
+                        "compress": true,
+                        "enableTrueClientIp": true,
+                        "trueClientIpHeader": "True-Client-IP",
+                        "trueClientIpClientSetting": false,
+                        "verificationMode": "CUSTOM",
+                        "originSni": false,
+                        "httpPort": 80,
+                        "httpsPort": 443,
+                        "hostname": "${env.originHostname}",
+                        "originCertificate": "",
+                        "ports": ""
+                    }
+                }
+            ],
+            "criteria": [
+                {
+                    "name": "path",
+                    "options": {
+                        "matchCaseSensitive": false,
+                        "matchOperator": "MATCHES_ONE_OF",
+                        "values": [
+                            "/origin1/"
+                        ],
+                        "normalize": false
+                    }
+                }
+            ],
+            "criteriaMustSatisfy": "all",
+            "comments": ""
+        },
+        {
+            "name": "/origin2/",
+            "children": [],
+            "behaviors": [
+                {
+                    "name": "origin",
+                    "options": {
+                        "originType": "CUSTOMER",
+                        "forwardHostHeader": "REQUEST_HOST_HEADER",
+                        "cacheKeyHostname": "REQUEST_HOST_HEADER",
+                        "compress": true,
+                        "enableTrueClientIp": true,
+                        "trueClientIpHeader": "True-Client-IP",
+                        "trueClientIpClientSetting": false,
+                        "verificationMode": "CUSTOM",
+                        "originSni": false,
+                        "httpPort": 80,
+                        "httpsPort": 443,
+                        "hostname": "${env.originHostname}",
+                        "originCertificate": "",
+                        "ports": ""
+                    }
+                }
+            ],
+            "criteria": [
+                {
+                    "name": "path",
+                    "options": {
+                        "matchCaseSensitive": false,
+                        "matchOperator": "MATCHES_ONE_OF",
+                        "values": [
+                            "/origin2/"
+                        ],
+                        "normalize": false
+                    }
+                }
+            ],
+            "criteriaMustSatisfy": "all",
+            "comments": ""
+        },
+        {
+            "name": "/random/",
+            "children": [
+                {
+                    "name": "Blue",
+                    "children": [],
+                    "behaviors": [
+                        {
+                            "name": "setVariable",
+                            "options": {
+                                "valueSource": "EXPRESSION",
+                                "transform": "NONE",
+                                "variableName": "PMUSER_ORIGIN",
+                                "variableValue": "flexblue.labln.ranet.me"
+                            }
+                        }
+                    ],
+                    "criteria": [
+                        {
+                            "name": "random",
+                            "options": {
+                                "bucket": 33
+                            }
+                        }
+                    ],
+                    "criteriaMustSatisfy": "all",
+                    "comments": ""
+                },
+                {
+                    "name": "Green",
+                    "children": [],
+                    "behaviors": [
+                        {
+                            "name": "setVariable",
+                            "options": {
+                                "valueSource": "EXPRESSION",
+                                "transform": "NONE",
+                                "variableName": "PMUSER_ORIGIN",
+                                "variableValue": "flexgreen.labln.ranet.me"
+                            }
+                        }
+                    ],
+                    "criteria": [
+                        {
+                            "name": "random",
+                            "options": {
+                                "bucket": 33
+                            }
+                        }
+                    ],
+                    "criteriaMustSatisfy": "all",
+                    "comments": ""
+                },
+                {
+                    "name": "Set-Origin",
+                    "children": [],
+                    "behaviors": [
+                        {
+                            "name": "origin",
+                            "options": {
+                                "originType": "CUSTOMER",
+                                "forwardHostHeader": "REQUEST_HOST_HEADER",
+                                "cacheKeyHostname": "ORIGIN_HOSTNAME",
+                                "compress": true,
+                                "enableTrueClientIp": true,
+                                "trueClientIpHeader": "True-Client-IP",
+                                "trueClientIpClientSetting": false,
+                                "verificationMode": "CUSTOM",
+                                "originSni": true,
+                                "httpPort": 80,
+                                "httpsPort": 443,
+                                "hostname": "${env.originHostname}",
+                                "originCertificate": "",
+                                "ports": "",
+                                "customValidCnValues": [
+                                    "{{Origin Hostname}}",
+                                    "{{Forward Host Header}}"
+                                ],
+                                "originCertsToHonor": "STANDARD_CERTIFICATE_AUTHORITIES",
+                                "standardCertificateAuthorities": [
+                                    "akamai-permissive"
+                                ]
+                            }
+                        }
+                    ],
+                    "criteria": [],
+                    "criteriaMustSatisfy": "all",
+                    "comments": ""
+                }
+            ],
+            "behaviors": [],
+            "criteria": [
+                {
+                    "name": "path",
+                    "options": {
+                        "matchOperator": "MATCHES_ONE_OF",
+                        "matchCaseSensitive": false,
+                        "values": [
+                            "/random/"
+                        ],
+                        "normalize": false
+                    }
+                }
+            ],
+            "criteriaMustSatisfy": "all",
+            "comments": ""
+        }
+    ],
+    "behaviors": [],
+    "criteria": [],
+    "criteriaMustSatisfy": "all",
+    "comments": ""
+}

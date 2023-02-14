@@ -1,0 +1,17 @@
+{
+    "name": "dev",
+    "propertyName": "dev.vvelazqu.devops.training",
+    "groupId": 229585,
+    "isSecure": true,
+    "propertyId": 885445,
+    "latestVersionInfo": {
+        "propertyVersion": 1,
+        "updatedByUser": "vvelazqu",
+        "updatedDate": "2023-02-14T00:08:42Z",
+        "productionStatus": "INACTIVE",
+        "stagingStatus": "INACTIVE",
+        "productId": "prd_Fresca",
+        "ruleFormat": "v2023-01-05"
+    },
+    "suggestedRuleFormat": "v2023-01-05"
+}

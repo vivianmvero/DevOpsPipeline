@@ -1,0 +1,56 @@
+{
+    "rules": {
+        "name": "default",
+        "children": [
+            "#include:CP_Code.json",
+            "#include:Caching.json",
+            "#include:Routing.json",
+            "#include:Remove_Vary_Header.json",
+            "#include:Deny_General_Access.json",
+            "#include:Deny_Staging_Access.json",
+            "#include:Akamaizer.json"
+        ],
+        "behaviors": [
+            {
+                "name": "origin",
+                "options": {
+                    "cacheKeyHostname": "REQUEST_HOST_HEADER",
+                    "compress": true,
+                    "enableTrueClientIp": true,
+                    "forwardHostHeader": "REQUEST_HOST_HEADER",
+                    "httpPort": 80,
+                    "httpsPort": 443,
+                    "originCertificate": "",
+                    "originSni": true,
+                    "originType": "CUSTOMER",
+                    "ports": "",
+                    "trueClientIpClientSetting": false,
+                    "trueClientIpHeader": "True-Client-IP",
+                    "verificationMode": "CUSTOM",
+                    "hostname": "${env.originHostname}"
+                }
+            }
+        ],
+        "uuid": "default",
+        "options": {
+            "is_secure": true
+        },
+        "variables": [
+            {
+                "name": "PMUSER_ORIGIN",
+                "value": "flexorigin.labln.ranet.me",
+                "description": "",
+                "hidden": false,
+                "sensitive": false
+            },
+            {
+                "name": "PMUSER_ORIGIN50_50",
+                "value": "flexgreen.labln.ranet.me",
+                "description": "",
+                "hidden": false,
+                "sensitive": false
+            }
+        ],
+        "comments": ""
+    }
+}

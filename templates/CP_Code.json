@@ -1,0 +1,17 @@
+{
+    "name": "CP Code",
+    "children": [],
+    "behaviors": [
+        {
+            "name": "cpCode",
+            "options": {
+                "value": {
+                    "id": "${env.cpCode}"
+                }
+            }
+        }
+    ],
+    "criteria": [],
+    "criteriaMustSatisfy": "all",
+    "comments": ""
+}
