@@ -7,6 +7,14 @@
         "cpCode": {
             "type": "cpCode",
             "default": null
+        },
+        "caching_ttl": {
+            "type": "cachingTtl",
+            "default": null
+        },
+        "caching_file": {
+            "type": "cachingFile",
+            "default": null
         }
     }
 }
