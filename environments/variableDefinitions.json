@@ -14,7 +14,7 @@
         },
         "caching_file": {
             "type": "cachingFile",
-            "default": null
+            "default": "css, js"
         }
     }
 }

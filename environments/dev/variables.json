@@ -1,6 +1,5 @@
 {
     "originHostname": "origin-dev.vvelazqu.devops.training",
     "cpCode": null,
-    "caching_ttl": "1s",
-    "caching_file": "css, js"
+    "caching_ttl": "1s"
 }
