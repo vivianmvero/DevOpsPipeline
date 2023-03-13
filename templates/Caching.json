@@ -5,11 +5,25 @@
         {
             "name": "caching",
             "options": {
-                "behavior": "NO_STORE"
+                "behavior": "MAX_AGE",
+                "mustRevalidate": false,
+                "ttl": "${env.caching_ttl}"
             }
         }
     ],
-    "criteria": [],
+    "criteria": [
+        {
+            "name": "fileExtension",
+            "options": {
+                "matchCaseSensitive": false,
+                "matchOperator": "IS_ONE_OF",
+                "values": [
+                    "${env.caching_file}"
+                ]
+            }    
+        }            
+            
+    ],
     "criteriaMustSatisfy": "all",
     "comments": ""
 }
