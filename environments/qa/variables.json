@@ -1,5 +1,4 @@
 {
     "originHostname": "origin-qa.vvelazqu.devops.training",
-    "cpCode": null,
     "caching_ttl": "1s"
 }

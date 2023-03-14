@@ -6,7 +6,7 @@
         },
         "cpCode": {
             "type": "cpCode",
-            "default": null
+            "default": 1430518
         },
         "caching_ttl": {
             "type": "cachingTtl",
